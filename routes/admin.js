@@ -1,5 +1,5 @@
 const express = require('express');
-const {check, body} = require("express-validator/check");
+const { check, body } = require("express-validator/check");
 
 const adminController = require('../controllers/admin');
 const isAuth = require("../middleware/isAuth");
@@ -21,7 +21,6 @@ router.post(
             .isString()
             .isLength({ min: 3 })
             .trim(),
-        body("imageUrl").isURL(),
         body("price")
             .isFloat(),
         body("description")
@@ -41,7 +40,6 @@ router.post(
             .isString()
             .isLength({ min: 3 })
             .trim(),
-        body("imageUrl").isURL(),
         body("price")
             .isFloat(),
         body("description")
